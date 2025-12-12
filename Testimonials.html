@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anant Vidya - Testimonials</title>
+  <link rel="stylesheet" href="teststyle.css">
+</head>
+
+<body>
+
+  <!-- Header with Navigation -->
+  <header style="text-align:center; padding:20px;">
+    <h1>Anant Vidya</h1>
+
+    <nav class="navbar">
+      <a href="Home.html">Home</a>
+      <a href="dasboard.html">Dashboard</a>
+      <a href="About.html">About</a>
+      <a href="Testimonials.html">Testimonials</a>
+    </nav>
+  </header>
+
+  <hr>
+
+  <!-- Testimonials Section -->
+  <h2 style="text-align:center;">Student Testimonials</h2>
+
+  <div id="reviewsContainer">
+    <div class="card">
+      <h3>Priya Sharma</h3>
+      <p>"AnantVidya has completely transformed the way I learn. The dashboard is intuitive, and the course content is top-notch."</p>
+      <p>Rating: ★★★★☆</p>
+    </div>
+
+    <div class="card">
+      <h3>Rahul Verma</h3>
+      <p>"The personalized learning paths and easy access to resources make AnantVidya a must-have for any student."</p>
+      <p>Rating: ★★★★★</p>
+    </div>
+
+    <div class="card">
+      <h3>Sneha Gupta</h3>
+      <p>"I love how AnantVidya blends design thinking with academic rigor. It helped me complete my assignments faster and with more clarity."</p>
+      <p>Rating: ★★★★☆</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Review Form -->
+  <h2 style="text-align:center;">Leave a Review</h2>
+
+  <form id="reviewForm" class="form-box" style="text-align:center;">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="review">Your Review:</label><br>
+    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+
+    <label>Rating:</label><br>
+    <input type="radio" name="rating" value="1" required> ★☆☆☆☆<br>
+    <input type="radio" name="rating" value="2"> ★★☆☆☆<br>
+    <input type="radio" name="rating" value="3"> ★★★☆☆<br>
+    <input type="radio" name="rating" value="4"> ★★★★☆<br>
+    <input type="radio" name="rating" value="5"> ★★★★★<br><br>
+
+    <input type="submit" value="Submit Review" class="submit-btn">
+  </form>
+
+  <script>
+    const form = document.getElementById("reviewForm");
+    const reviewsContainer = document.getElementById("reviewsContainer");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();  
+
+      const name = document.getElementById("name").value;
+      const review = document.getElementById("review").value;
+      const rating = document.querySelector('input[name="rating"]:checked').value;
+
+      const stars = "★★★★★☆☆☆☆☆".slice(5 - rating, 10 - rating);
+
+      const newCard = document.createElement("div");
+      newCard.classList.add("card");
+      newCard.innerHTML = `
+        <h3>${name}</h3>
+        <p>"${review}"</p>
+        <p>Rating: ${stars}</p>
+      `;
+
+      reviewsContainer.appendChild(newCard);
+
+      form.reset();  
+    });
+  </script>
+
+</body>
+</html>

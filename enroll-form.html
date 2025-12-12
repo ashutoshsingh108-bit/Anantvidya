@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Enrollment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #26497f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .enroll-container {
+      background: #cfcaca;
+      padding: 25px 40px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 8px 0 4px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #43a047;
+    }
+
+    .success-msg {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="enroll-container">
+    <h2>Course Enrollment Form</h2>
+
+    <form id="enrollForm" onsubmit="submitForm(event)">
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Phone Number</label>
+      <input type="tel" id="phone" required>
+
+      <label>Select Course</label>
+      <select id="course" required>
+        <option value="">-- Select Course --</option>
+        <option>Python for Beginners</option>
+        <option>Digital Marketing Essentials</option>
+        <option>Mindfulness & Meditation</option>
+      </select>
+
+      <button type="submit">Enroll Now</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      ✅ You have successfully enrolled!
+    </div>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const course = document.getElementById("course").value;
+
+      if (name && email && course) {
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("enrollForm").reset();
+      }
+    }
+  </script>
+
+</body>
+</html>

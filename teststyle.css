@@ -1,0 +1,151 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #283c86, #1d211d);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px 10px;
+  text-align: center;
+  border-bottom: 3px solid rgba(255,255,255,0.1);
+}
+
+header h1 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+/* Navigation Bar */
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 12px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #ffffff;
+  color: #2c5364;
+}
+
+/* Section Headings */
+h2 {
+  text-align: center;
+  margin: 30px 0 15px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+h3 {
+  color: #1c94c7;
+  margin-bottom: 8px;
+}
+
+/* Testimonials Cards */
+#reviewsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  background: #ffffff;
+  color: #333;
+  border-radius: 16px;
+  width: 280px;
+  margin: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.card p {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+/* Review Form */
+.form-box {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  color: #ffffff;
+}
+
+.form-box label {
+  font-weight: bold;
+}
+
+.form-box input[type="text"],
+.form-box textarea {
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form-box input[type="radio"] {
+  margin: 5px 0;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .form-box {
+    width: 90%;
+  }
+}
